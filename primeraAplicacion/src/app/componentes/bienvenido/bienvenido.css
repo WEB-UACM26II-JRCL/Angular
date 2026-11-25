@@ -1,0 +1,104 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  justify-content: safe center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 24px 20px;
+  overflow-y: auto;
+  text-align: center;
+  background: white;
+  border-radius: 24px;
+}
+
+.icono-usuario {
+  margin-bottom: 20px;
+}
+
+.icono-usuario img {
+  width: 120px;
+  height: 120px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 15px;
+  color: #3F4647;
+  margin-bottom: 12px;
+}
+
+.input-container {
+  position: relative;
+}
+
+.input-container input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.icono-visualizar {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.recuerdame {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #3F4647;
+  margin-top: 20px;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #7F8C8D;
+  border-radius: 5px;
+}
+
+input.error {
+  border: 1px solid red;
+}
+
+.mensaje-error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+button {
+  background: #B98C57;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 30px;
+}
+
+button:hover {
+  background: #356f6f;
+}
+
+.selector-idioma {
+  margin-top: 20px;
+}
+
+.selector-idioma button {
+  background: #65C4BE;
+  padding: 5px 10px;
+  margin: 0 5px;
+}

@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #4B3732, #6F263B);
+}
+
+/* Marco de dispositivo movil: la aplicacion ocupa una columna centrada */
+app-root {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 500px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 10px;
+}
