@@ -3,5 +3,22 @@
     "target": "http://developer.jquiroz.net:3005",
     "secure": false,
     "changeOrigin": true
+  },
+  "/graphql": {
+    "target": "http://localhost:3006",
+    "secure": false
+  },
+  "/notificaciones/eventos": {
+    "target": "http://localhost:3006",
+    "secure": false
+  },
+  "/notificaciones/generar": {
+    "target": "http://localhost:3006",
+    "secure": false
+  },
+  "/ws": {
+    "target": "ws://localhost:3006",
+    "secure": false,
+    "ws": true
   }
 }

@@ -1,0 +1,32 @@
+<div class="formulario">
+  <div class="btn-regresar">
+    <button type="button" (click)="regresar()">
+      <img src="/iconos/retroceder.svg" alt="Icono de regresar">
+    </button>
+  </div>
+
+  <h1>{{ 'CHATBOT' | translate }}</h1>
+
+  <div class="estado" [class]="chat.estado()">
+    Estado: {{ chat.estado() }}
+  </div>
+
+  @if (chat.estado() === 'desconectado' || chat.estado() === 'error') {
+    <button type="button" class="reconectar" (click)="reconectar()">Conectar</button>
+  }
+
+  <div class="mensajes">
+    @for (m of chat.mensajes(); track $index) {
+      <div class="mensaje" [class.usuario]="m.autor === 'usuario'">
+        {{ m.texto }}
+      </div>
+    } @empty {
+      <div class="vacio">Sin mensajes</div>
+    }
+  </div>
+
+  <form class="envio" (submit)="$event.preventDefault(); enviar()">
+    <input type="text" [formControl]="texto" />
+    <button type="submit" [disabled]="chat.estado() !== 'conectado'">{{ 'SUBMIT' | translate }}</button>
+  </form>
+</div>

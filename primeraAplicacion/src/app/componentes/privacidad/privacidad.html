@@ -1,0 +1,18 @@
+<div class="pantalla">
+  <div class="encabezado">
+    <button type="button" class="btn-regresar" (click)="regresar()">
+      <img src="/iconos/retroceder.svg" alt="Icono de regresar">
+    </button>
+    <h1>{{ 'PRIVACY_NOTICE' | translate }}</h1>
+    <span class="espacio"></span>
+  </div>
+
+  <div class="contenido">
+    @for (s of secciones; track s.titulo) {
+      <section>
+        <h2>{{ s.titulo }}</h2>
+        <p>{{ s.texto }}</p>
+      </section>
+    }
+  </div>
+</div>

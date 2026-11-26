@@ -1,19 +1,16 @@
 import { Routes } from '@angular/router';
-import { Bienvenido } from './componentes/bienvenido/bienvenido';
-import { Principal } from './componentes/principal/principal';
-import { Registro } from './componentes/registro/registro';
-import { Personal } from './componentes/personal/personal';
-import { Cuenta } from './componentes/cuenta/cuenta';
-import { Direccion } from './componentes/direccion/direccion';
-import { Fotografia } from './componentes/fotografia/fotografia';
 
 export const routes: Routes = [
-  { path: 'bienvenido', component: Bienvenido },
-  { path: 'principal', component: Principal },
-  { path: 'registro', component: Registro },
-  { path: 'personal', component: Personal },
-  { path: 'cuenta', component: Cuenta },
-  { path: 'direccion', component: Direccion },
-  { path: 'fotografia', component: Fotografia },
+  { path: 'bienvenido', loadComponent: () => import('./componentes/bienvenido/bienvenido').then((m) => m.Bienvenido) },
+  { path: 'principal', loadComponent: () => import('./componentes/principal/principal').then((m) => m.Principal) },
+  { path: 'registro', loadComponent: () => import('./componentes/registro/registro').then((m) => m.Registro) },
+  { path: 'personal', loadComponent: () => import('./componentes/personal/personal').then((m) => m.Personal) },
+  { path: 'cuenta', loadComponent: () => import('./componentes/cuenta/cuenta').then((m) => m.Cuenta) },
+  { path: 'direccion', loadComponent: () => import('./componentes/direccion/direccion').then((m) => m.Direccion) },
+  { path: 'fotografia', loadComponent: () => import('./componentes/fotografia/fotografia').then((m) => m.Fotografia) },
+  { path: 'micuenta', loadComponent: () => import('./componentes/micuenta/micuenta').then((m) => m.Micuenta) },
+  { path: 'notificaciones', loadComponent: () => import('./componentes/notificaciones/notificaciones').then((m) => m.Notificaciones) },
+  { path: 'chatbot', loadComponent: () => import('./componentes/chatbot/chatbot').then((m) => m.Chatbot) },
+  { path: 'privacidad', loadComponent: () => import('./componentes/privacidad/privacidad').then((m) => m.Privacidad) },
   { path: '', redirectTo: '/bienvenido', pathMatch: 'full' },
 ];

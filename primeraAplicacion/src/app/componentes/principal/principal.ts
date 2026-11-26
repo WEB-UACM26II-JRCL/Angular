@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { RendimientoService } from '../../services/rendimiento';
 
 @Component({
   selector: 'app-principal',
@@ -15,6 +16,7 @@ export class Principal {
       icono: '/iconos/Usuario.svg',
       texto: 'MY_ACCOUNT',
       alt: 'MY_ACCOUNT',
+      accion: () => this.irAMiCuenta(),
     },
     {
       icono: '/iconos/Registro.svg',
@@ -26,16 +28,19 @@ export class Principal {
       icono: '/iconos/Notificaciones.svg',
       texto: 'NOTIFICATIONS',
       alt: 'NOTIFICATIONS',
+      accion: () => this.irANotificaciones(),
     },
     {
       icono: '/iconos/Pantera.svg',
       texto: 'CHATBOT',
       alt: 'CHATBOT',
+      accion: () => this.irAChatbot(),
     },
     {
       icono: '/iconos/AvisoPrivacidad.svg',
       texto: 'PRIVACY_NOTICE',
       alt: 'PRIVACY_NOTICE',
+      accion: () => this.irAPrivacidad(),
     },
     {
       icono: '/iconos/Cerrar sesion.svg',
@@ -47,12 +52,31 @@ export class Principal {
 
   constructor(
     private router: Router,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private rendimiento: RendimientoService
   ) {}
+
+  irAMiCuenta() {
+    this.router.navigate(['/micuenta']);
+  }
 
   // Nota: la ruta '/registro' se habilita en la segunda parte
   irARegistro() {
+    // Inicio de la Prueba 1: el usuario selecciona Registro
+    this.rendimiento.iniciar('Prueba 1: renderizado de Registro');
     this.router.navigate(['/registro']);
+  }
+
+  irANotificaciones() {
+    this.router.navigate(['/notificaciones']);
+  }
+
+  irAChatbot() {
+    this.router.navigate(['/chatbot']);
+  }
+
+  irAPrivacidad() {
+    this.router.navigate(['/privacidad']);
   }
 
   cerrarSesion() {

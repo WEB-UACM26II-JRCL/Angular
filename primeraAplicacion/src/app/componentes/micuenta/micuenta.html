@@ -1,0 +1,32 @@
+<div class="formulario">
+  <div class="btn-regresar">
+    <button type="button" (click)="regresar()">
+      <img src="/iconos/retroceder.svg" alt="Icono de regresar">
+    </button>
+  </div>
+
+  <h1>{{ 'MY_ACCOUNT' | translate }}</h1>
+
+  @if (perfil(); as p) {
+    <div class="dato"><span>{{ 'NAME' | translate }}:</span> {{ p.nombre }}</div>
+    <div class="dato"><span>{{ 'EMAIL' | translate }}:</span> {{ p.email }}</div>
+    <div class="dato"><span>{{ 'PHONE_NUMBER' | translate }}:</span> {{ p.telefono }}</div>
+
+    <form class="form" (submit)="$event.preventDefault(); guardar()">
+      <label for="telefono">{{ 'PHONE_NUMBER' | translate }}: </label>
+      <input id="telefono" type="tel" [formControl]="telefono" />
+      @if (telefono.invalid && telefono.touched) {
+        <div class="mensaje-error">{{ 'REQUIERED' | translate }}</div>
+      }
+      <button type="submit">{{ 'SUBMIT' | translate }}</button>
+    </form>
+  }
+
+  @if (mensaje()) {
+    <div class="mensaje-exito">{{ mensaje() }}</div>
+  }
+
+  @if (error()) {
+    <div class="mensaje-error">{{ error() }}</div>
+  }
+</div>

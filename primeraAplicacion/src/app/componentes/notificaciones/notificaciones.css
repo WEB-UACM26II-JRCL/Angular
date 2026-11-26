@@ -1,0 +1,119 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.pantalla {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 24px 20px;
+  background: white;
+  border-radius: 24px;
+  color: #4B3732;
+}
+
+.encabezado {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.btn-regresar {
+  background: #D3B796;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.btn-regresar img {
+  width: 20px;
+  height: 20px;
+}
+
+h1 {
+  flex: 1;
+  text-align: center;
+  color: #6F263B;
+  font-size: 22px;
+  margin: 0;
+}
+
+.contador {
+  min-width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #6F263B;
+  color: white;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.estado {
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 8px;
+  color: #6F263B;
+}
+
+.estado.conectado {
+  color: green;
+}
+
+.estado.error {
+  color: red;
+}
+
+.lista {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.notificacion {
+  padding: 12px 0;
+  border-top: 1px solid #E5D4C0;
+}
+
+.fila {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.titulo {
+  font-weight: bold;
+  color: #6F263B;
+  font-size: 15px;
+}
+
+.hora {
+  font-size: 12px;
+  color: #888;
+}
+
+.mensaje {
+  margin: 4px 0 0;
+  font-size: 14px;
+}
+
+.vacio {
+  color: #999;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.alternar {
+  margin-top: 12px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #EEF0F4;
+  color: #4B3732;
+  cursor: pointer;
+}

@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, afterNextRender, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { RegistroService } from '../../services/registro';
 import { ProgresoService } from '../../services/progreso';
 import { Api } from '../../services/servAPI/api';
 import { Router } from '@angular/router';
+import { RendimientoService } from '../../services/rendimiento';
 
 @Component({
   selector: 'app-registro',
@@ -13,6 +14,13 @@ import { Router } from '@angular/router';
   styleUrl: './registro.css',
 })
 export class Registro implements OnInit {
+  private rendimiento = inject(RendimientoService);
+
+  // Fin de la Prueba 1: la pantalla ya se renderizo y se pinto el siguiente cuadro
+  medicionRenderizado = afterNextRender(() => {
+    requestAnimationFrame(() => this.rendimiento.finalizar('Prueba 1: renderizado de Registro'));
+  });
+
   pasos: any[] = [];
   pasosComp: { [clave: number]: boolean } = {};
   pasoActual = 0;

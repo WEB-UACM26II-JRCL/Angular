@@ -1,7 +1,7 @@
 <div class="contenedor">
   <div class="tarjeta">
     @for (item of tarjetas; track $index) {
-      <div (click)="item.accion ? item.accion() : null">
+      <div (click)="item.accion()">
         <div class="icono">
           <img [src]="item.icono" [alt]="item.alt">
         </div>

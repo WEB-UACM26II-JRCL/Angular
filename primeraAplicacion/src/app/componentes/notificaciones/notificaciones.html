@@ -1,0 +1,31 @@
+<div class="pantalla">
+  <div class="encabezado">
+    <button type="button" class="btn-regresar" (click)="regresar()">
+      <img src="/iconos/retroceder.svg" alt="Icono de regresar">
+    </button>
+    <h1>{{ 'NOTIFICATIONS' | translate }}</h1>
+    <span class="contador">{{ sse.total() }}</span>
+  </div>
+
+  <div class="estado" [class]="sse.estado()">
+    Estado: {{ sse.estado() }}
+  </div>
+
+  <div class="lista">
+    @for (n of sse.notificaciones(); track $index) {
+      <div class="notificacion">
+        <div class="fila">
+          <span class="titulo">Notificación {{ n.id }}</span>
+          <span class="hora">{{ n.hora }}</span>
+        </div>
+        <p class="mensaje">{{ n.mensaje }}</p>
+      </div>
+    } @empty {
+      <div class="vacio">Sin notificaciones</div>
+    }
+  </div>
+
+  <button type="button" class="alternar" (click)="alternar()">
+    {{ sse.estado() === 'desconectado' ? 'Conectar' : 'Desconectar' }}
+  </button>
+</div>
